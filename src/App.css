@@ -1,38 +1,41 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@500&family=Poiret+One&family=Special+Elite&display=swap");
+body {
+  background-color: #ff0000;
+}
+.heading {
   text-align: center;
+  text-decoration: underline;
+  font-family: Cookie;
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content {
+  font-size: 1rem;
+  font-size: none;
+  font-family: "Special Elite", cursive;
+  text-align: justify;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content_heading {
+  font-family: "Arima Madurai", cursive;
+  font-size: 1.5rem;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cards {
+  margin-top: 2rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.a {
+  margin: 1.2rem;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media only screen and (max-width: 786px) {
+  .n {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 }
