@@ -12,7 +12,7 @@ function App() {
   const [pageNumber, setPageNumber] = useState(1);
   useEffect(() => {
     axios
-      .get("https://jsonplaceholder.typicode.com/posts?_limit=50")
+      .get(`https://jsonplaceholder.typicode.com/posts?_limit=${12 * 8}`)
       .then((res) => {
         setData(res.data);
       })

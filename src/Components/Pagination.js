@@ -33,7 +33,7 @@ export default function Pagination1({ pageNumber, setPageNumber }) {
         Page: {pageNumber}
       </Typography>
       <Pagination
-        count={10}
+        count={9}
         color="secondary"
         pageNumber={pageNumber}
         onChange={handleChange}
