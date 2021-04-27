@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Pagination1({ pageNumber, setPageNumber }) {
+export default function Pagination1({ data, pageNumber, setPageNumber }) {
   const classes = useStyles();
 
   const handleChange = (event, value) => {
@@ -33,7 +33,7 @@ export default function Pagination1({ pageNumber, setPageNumber }) {
         Page: {pageNumber}
       </Typography>
       <Pagination
-        count={9}
+        count={data.length}
         color="secondary"
         pageNumber={pageNumber}
         onChange={handleChange}

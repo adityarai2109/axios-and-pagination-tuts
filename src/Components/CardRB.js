@@ -5,7 +5,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export default function CardRB(props) {
   return (
     <div>
-      <Card className="text-white bg-dark a" style={{ width: "20rem" }}>
+      <Card
+        className="text-white bg-dark a"
+        style={{ width: "20rem" }}
+        key={props.id}
+      >
         <Card.Header className="content_heading">{`${props.id}. ${props.title}`}</Card.Header>
         <Card.Body>
           <Card.Img

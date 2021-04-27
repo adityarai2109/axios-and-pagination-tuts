@@ -12,9 +12,9 @@ function App() {
   const [pageNumber, setPageNumber] = useState(1);
   useEffect(() => {
     axios
-      .get(`https://jsonplaceholder.typicode.com/posts?_limit=${12 * 8}`)
+      .get(`https://jsonplaceholder.typicode.com/posts?_limit=100}`)
       .then((res) => {
-        setData(res.data);
+        setData(_.chunk(res.data, 12));
       })
       .catch(function (error) {
         console.log(error);
@@ -25,18 +25,25 @@ function App() {
     i.title = i.title[0].toUpperCase().concat(i.title.slice(1));
     i.body = i.body[0].toUpperCase().concat(i.body.slice(1));
   };
-
-  data.forEach((ele) => Capitalize(ele));
-
+  data.forEach((ele) =>
+    ele.forEach((i) => {
+      Capitalize(i);
+    })
+  );
+  // let newData = data;
   return (
     <div className="App">
       <Navbar />
       <div className="cards">
-        {data.map((i) => {
+        {data[pageNumber - 1].forEach((i) => {
           return <CardRB id={i.id} title={i.title} body={i.body} />;
         })}
       </div>
-      <Pagination1 pageNumber={pageNumber} setPageNumber={setPageNumber} />
+      <Pagination1
+        data={data}
+        pageNumber={pageNumber}
+        setPageNumber={setPageNumber}
+      />
     </div>
   );
 }
