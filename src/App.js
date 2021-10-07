@@ -10,11 +10,20 @@ import _ from "lodash";
 function App() {
   const [data, setData] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
+ 
+  // useEffect(()=>{
+  //   const getPosts = async()=>{
+  //     const res = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=100');
+  //     setData(res.date);
+  //   }
+  //   getPosts();
+  // }, []);
+
   useEffect(() => {
     axios
       .get(`https://jsonplaceholder.typicode.com/posts?_limit=100}`)
       .then((res) => {
-        setData(_.chunk(res.data, 12));
+        setData(_.chunk(res.data, 10));
       })
       .catch(function (error) {
         console.log(error);
@@ -35,8 +44,13 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="cards">
-        {data[pageNumber - 1].forEach((i) => {
+        {/* {data.forEach((i) => {
           return <CardRB id={i.id} title={i.title} body={i.body} />;
+        })} */}
+        {data.forEach((i)=>{
+          i.forEach((j)=>{
+            return console.log(j.title);
+          })
         })}
       </div>
       <Pagination1
